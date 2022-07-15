@@ -61,6 +61,10 @@ lvim.builtin.treesitter.highlight.enabled = true
 vim.opt.cmdheight = 1
 vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
+-- vim.opt[fillchars] = {
+--   diff         = '⣿',                          -- Show the specified symbol for Diff
+--   vert         = '¦'                           -- Show the specified symbol for vertical split
+-- },
 -- vim.opt.listchars = {
 --   space = '·', -- Show space with the symbol set
 --   tab   = '│ ' -- Show tabs with the symbol set
@@ -70,23 +74,53 @@ vim.opt.relativenumber = true
 -- # Additional plugins
 -- #--------------------
 lvim.plugins = {
-  -- {"folke/tokyonight.nvim"},
   -- {
   --   "folke/trouble.nvim",
   --   cmd = "TroubleToggle",
   -- },
+
+  -- ## Colorschemes
+  -- ## ------------
+  -- { "folke/tokyonight.nvim" },
+  { "sainnhe/sonokai" },
+  -- { "LunarVim/onedarker.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
+  -- { "jacoborus/tender.vim" },
+
+  -- ## Others
+  -- ## ------
   {
-    'rmagatti/session-lens', -- Session switcher in Telescope
+    'rmagatti/session-lens',
     requires = {
-      'rmagatti/auto-session', -- Extends auto-session.
+      'rmagatti/auto-session',
       'nvim-telescope/telescope.nvim'
     }
-  }
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+    config = function()
+      require("diffview").setup({})
+    end,
+  },
 }
 
 -- #--------------------
 -- # Additional config
 -- #--------------------
+
+-- # Colorscheme config
+-- # ------------------
+-- vim.g.sonokai_style = 'default'
+vim.g.sonokai_style = 'andromeda'
+vim.g.sonokai_better_performance = 1
+-- vim.g.sonokai_style = 'espresso'
+-- vim.g.sonokai_enable_italic = 1
+lvim.colorscheme = "sonokai"
+-- vim.g.tokyonight_style = 'night'
+-- vim.g.tokyonight_italic_functions = 1
+-- lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "tender"
 
 -- # Auto-Session
 -- # ------------
@@ -121,6 +155,7 @@ require("telescope").load_extension "session-lens"
 -- List all keymaps: <leader>Lk
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<F3>"] = "<cmd>NvimTreeFindFileToggle<cr>"
+lvim.keys.normal_mode["<F2>"] = "<cmd>DiffviewToggleFiles<cr>"
 
 -- To unmap a default keymapping: vim.keymap.del("n", "<C-Up>")
 -- Override a default keymapping: lvim.keys.normal_mode["<C-q>"] = ":q<cr>" OR vim.keymap.set("n", "<C-q>", ":q<cr>" )
@@ -143,17 +178,11 @@ lvim.keys.normal_mode["<F3>"] = "<cmd>NvimTreeFindFileToggle<cr>"
 --   },
 -- }
 
--- # Which-key bindings
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope find_files cwd=~<cr>", "Global Find File" }
-lvim.builtin.which_key.mappings["bk"] = { "<cmd>BufferKill<cr>", "Kill this buffer" }
-lvim.builtin.which_key.mappings["bs"] = {
-  "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-  "Search in this buffer"
-}
-lvim.builtin.which_key.mappings["bS"] = {
-  "<cmd>Telescope live_grep grep_open_files=true<cr>",
-  "Search in all buffer"
+-- # New which-key bindings
+lvim.builtin.which_key.mappings["P"] = {
+  name = "+Project",
+  l = { "<cmd>Telescope projects<cr>", "Select a project" },
+  s = { "<cmd>Telescope live_grep<cr>", "Search text in current project" },
 }
 lvim.builtin.which_key.mappings["S"] = {
   name = "+Session",
@@ -161,6 +190,22 @@ lvim.builtin.which_key.mappings["S"] = {
   r = { "<cmd>RestoreSession<cr>", "Restore last session" },
   v = { "<cmd>SearchSession<cr>", "View sessions" },
   d = { "<cmd>DeleteSession<cr>", "Delete current session" },
+}
+lvim.builtin.which_key.mappings["d"] = {
+  name = "+Diffview",
+  o = { "<cmd>DiffviewOpen -uno<cr>", "Open Diffview" },
+  c = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
+}
+
+-- # Additions to existing which-key bindings
+lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope find_files cwd=~<cr>", "Global Find File" }
+lvim.builtin.which_key.mappings["bs"] = {
+  "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+  "Search in this buffer"
+}
+lvim.builtin.which_key.mappings["bS"] = {
+  "<cmd>Telescope live_grep grep_open_files=true<cr>",
+  "Search in all buffer"
 }
 
 -- lvim.builtin.which_key.mappings["t"] = {
