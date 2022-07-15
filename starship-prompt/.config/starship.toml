@@ -1,0 +1,42 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[directory]
+truncation_length = 1
+truncation_symbol = "../"
+
+[line_break]
+disabled = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜ ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜ ](bold red)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# success_symbol = "[❄](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# error_symbol = "[❄](red)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# success_symbol = "[➤](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# error_symbol = "[➤](red)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# Hostname
+[hostname]
+ssh_only = false
+format = "[Ψ](blue) "
+disabled = false
+
+[git_branch]
+style = "#c0c672"
+
+[git_status]
+style = "#f26942"
+
+[python]
+disabled = true
+# format = "[${symbol}${pyenv_prefix}(${version})(($virtualenv))]($style) "
+
+[nodejs]
+# disabled = true
+format = "[$symbol($version )]($style)"
