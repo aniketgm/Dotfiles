@@ -105,7 +105,7 @@ alias ll='ls -alhF --group-directories-first'
 alias la='ls -A --group-directories-first'
 alias l='ls -CF'
 if [ -x /usr/bin/exa ]; then
-    alias lse='exa -al -s type --group-directories-first'
+    alias lse='exa -al -s extension --group-directories-first'
     alias lss='exa -al -s size --group-directories-first'
 fi
 

@@ -1,8 +1,8 @@
 --[[
               __________________
           /\  \   __           /  /\    /\           Author      : Aniket Meshram [AniGMe]
-         /  \  \  \         __/  /  \  /  \          Description : LunarVim configuration. This configuration is
-        /    \  \       _____   /    \/    \                       divided into following sections:
+         /  \  \  \         __/  /  \  /  \          Description : LunarVim customized configuration. This configuration
+        /    \  \       _____   /    \/    \                       is divided into following sections:
        /  /\  \  \     /    /  /            \                      - LunarVim options
       /        \  \        /  /      \/      \                     - Vim options
      /          \  \      /  /                \                    - Additional plugins and their configurations
@@ -104,6 +104,7 @@ lvim.plugins = {
     end,
   },
   { "kdheepak/lazygit.nvim" },
+  { "nvim-telescope/telescope-file-browser.nvim" },
 }
 
 -- #--------------------
@@ -134,6 +135,7 @@ require('auto-session').setup({
 lvim.builtin.telescope.defaults.layout_strategy = "bottom_pane"
 lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 lvim.builtin.telescope.defaults.path_display = { truncate = true }
+lvim.builtin.telescope.defaults.winblend = 15
 lvim.builtin.telescope.pickers.current_buffer_fuzzy_find = { previewer = false }
 lvim.builtin.telescope.pickers.live_grep = {
   previewer = false,
@@ -147,7 +149,9 @@ lvim.builtin.telescope.pickers.buffers = {
   }
 }
 lvim.builtin.telescope.pickers.find_files.layout_config = { preview_width = 65 }
+
 require("telescope").load_extension "session-lens"
+require("telescope").load_extension "file_browser"
 
 -- #--------------------
 -- # Additional keymaps
@@ -209,14 +213,20 @@ lvim.builtin.which_key.mappings["D"] = {
 }
 
 -- # Additions to existing which-key bindings
-lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope find_files cwd=~<cr>", "Find File in HOME dir" }
+lvim.builtin.which_key.mappings["sF"] = {
+  "<cmd>Telescope find_files cwd=~<cr>", "Find File in HOME dir"
+}
+lvim.builtin.which_key.mappings["sB"] = {
+  "<cmd>Telescope file_browser depth=2<cr>", "Browse Files"
+}
 lvim.builtin.which_key.mappings["bs"] = {
-  "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-  "Search in this buffer"
+  "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search in this buffer"
 }
 lvim.builtin.which_key.mappings["bS"] = {
-  "<cmd>Telescope live_grep grep_open_files=true<cr>",
-  "Search in all buffers"
+  "<cmd>Telescope live_grep grep_open_files=true<cr>", "Search in all buffers"
+}
+lvim.builtin.which_key.mappings["gg"] = {
+  "<cmd>LazyGit<cr>", "LazyGit"
 }
 
 -- lvim.builtin.which_key.mappings["t"] = {

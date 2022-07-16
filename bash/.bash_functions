@@ -26,17 +26,23 @@ batt() {
 
 # Fuzzy file finder customized to open with neovim.
 ff() {
-    FZF_OUTPUT=$(ag --hidden -g "" | fzf --preview="batcat --color=always --style=numbers {}" --bind shift-up:preview-page-up,shift-down:preview-page-down)
+    FZF_OUTPUT=$(rg --files --hidden | \
+                 fzf --preview="batcat --color=always --style=numbers {}" \
+                     --bind shift-up:preview-page-up,shift-down:preview-page-down \
+                     --height=20 --reverse)
     if [ -z $FZF_OUTPUT ]; then
         return
     else
-        nvim $FZF_OUTPUT
+        lvim $FZF_OUTPUT
     fi
 }
 
 # Fuzzy folder switcher
 fd() {
-    FZF_OUTPUT=$(find . -type d | fzf --preview="ls -l --color=always --group-directories-first {}" --bind shift-up:preview-up,shift-down:preview-down)
+    FZF_OUTPUT=$(find . -type d | \
+                 fzf --preview="ls -l --color=always --group-directories-first {}" \
+                     --bind shift-up:preview-up,shift-down:preview-down \
+                     --height=20 --reverse)
     if [ -z $FZF_OUTPUT ]; then
         return
     else
