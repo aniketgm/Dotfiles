@@ -157,6 +157,7 @@ require("telescope").load_extension "session-lens"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<F3>"] = "<cmd>NvimTreeFindFileToggle<cr>"
 lvim.keys.normal_mode["<F2>"] = "<cmd>DiffviewToggleFiles<cr>"
+lvim.keys.normal_mode["<C-q>"] = false
 
 -- To unmap a default keymapping: vim.keymap.del("n", "<C-Up>")
 -- Override a default keymapping: lvim.keys.normal_mode["<C-q>"] = ":q<cr>" OR vim.keymap.set("n", "<C-q>", ":q<cr>" )
