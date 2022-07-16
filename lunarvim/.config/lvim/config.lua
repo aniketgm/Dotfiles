@@ -103,6 +103,7 @@ lvim.plugins = {
       require("diffview").setup({})
     end,
   },
+  { "kdheepak/lazygit.nvim" },
 }
 
 -- #--------------------
@@ -130,8 +131,8 @@ require('auto-session').setup({
 
 -- # Telescope
 -- # ---------
--- lvim.builtin.telescope.defaults.layout_strategy = "bottom_pane"
--- lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
+lvim.builtin.telescope.defaults.layout_strategy = "bottom_pane"
+lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 lvim.builtin.telescope.defaults.path_display = { truncate = true }
 lvim.builtin.telescope.pickers.current_buffer_fuzzy_find = { previewer = false }
 lvim.builtin.telescope.pickers.live_grep = {

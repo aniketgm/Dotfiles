@@ -174,11 +174,6 @@ eval "$(~/.local/bin/zoxide init bash)"
 eval "$(starship init bash)"
 
 ##-----------------------------------------------------
-## synth-shell-prompt.sh
-# if [ -f /home/aniketgm/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source /home/aniketgm/.config/synth-shell/synth-shell-prompt.sh
-# fi
-
 # Generated for envman. Do not edit.
 # [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
