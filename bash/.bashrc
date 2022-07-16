@@ -19,25 +19,18 @@ case $- in
 esac
 
 # Add $HOME/bin and $HOME/.local/bin to PATH
-if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/local/bin:$PATH"
-fi
+# [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"               | Commented out since already defined in .profile.
+# [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH" | For new machine setup check profile/PATH if not included.
+
+# Define xdg config home 
+[[ -z "${XDG_CONFIG_HOME}" ]] && export XDG_CONFIG_HOME="$HOME/.config"
 
 # Define browser variable
-if [ -x /usr/bin/firefox ]; then
-    export BROWSER="/usr/bin/firefox"
-fi
+[ -x /usr/bin/firefox ] && export BROWSER="/usr/bin/firefox"
 
 # Check if Windows access is enabled and set a var for it.
-if [ -d "/mnt/c/Users/Aniket" ]; then
-    WIN_HOME="/mnt/c/Users/Aniket"
-fi
-if [ -d "/mnt/d/SummuData" ]; then
-    WIN_D_DRIVE="/mnt/d/SummuData"
-fi
+[[ -d "/mnt/c/Users/Aniket" ]] && WIN_HOME="/mnt/c/Users/Aniket"
+[[ -d "/mnt/d/SummuData" ]] && WIN_D_DRIVE="/mnt/d/SummuData"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -124,7 +117,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -145,7 +137,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Set greeting messages: using fortune OR neofetch
+# Set greeting colors / message: using colorscript (DistroTube) OR fortune OR neofetch
 if type colorscript &>/dev/null; then
     colorscript random
 elif type fortune &>/dev/null && type cowsay &>/dev/null && type lolcat &>/dev/null; then
@@ -172,8 +164,4 @@ eval "$(~/.local/bin/zoxide init bash)"
 
 # Starship Prompt
 eval "$(starship init bash)"
-
-##-----------------------------------------------------
-# Generated for envman. Do not edit.
-# [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 

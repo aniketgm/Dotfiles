@@ -197,16 +197,25 @@ lvim.builtin.which_key.mappings["d"] = {
   o = { "<cmd>DiffviewOpen -uno<cr>", "Open Diffview" },
   c = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
 }
+lvim.builtin.which_key.mappings["D"] = {
+  name = "+Dotfiles",
+  r = { "<cmd>edit ~/.bashrc<cr>", "Edit bashrc" },
+  a = { "<cmd>edit ~/.bash_aliases<cr>", "Edit bash aliases" },
+  f = { "<cmd>edit ~/.bash_functions<cr>", "Edit bash functions" },
+  t = { "<cmd>edit ~/.tmux.conf<cr>", "Edit tmux config" },
+  s = { "<cmd>edit ~/.config/starship.toml<cr>", "Edit starship prompt config" },
+  -- c = { "<cmd>edit ~/.config/alacritty/alacritty.yml", "Edit alacritty config" },
+}
 
 -- # Additions to existing which-key bindings
-lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope find_files cwd=~<cr>", "Global Find File" }
+lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope find_files cwd=~<cr>", "Find File in HOME dir" }
 lvim.builtin.which_key.mappings["bs"] = {
   "<cmd>Telescope current_buffer_fuzzy_find<cr>",
   "Search in this buffer"
 }
 lvim.builtin.which_key.mappings["bS"] = {
   "<cmd>Telescope live_grep grep_open_files=true<cr>",
-  "Search in all buffer"
+  "Search in all buffers"
 }
 
 -- lvim.builtin.which_key.mappings["t"] = {
