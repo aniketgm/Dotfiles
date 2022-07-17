@@ -30,11 +30,7 @@ ff() {
                  fzf --preview="batcat --color=always --style=numbers {}" \
                      --bind shift-up:preview-page-up,shift-down:preview-page-down \
                      --height=20 --reverse)
-    if [ -z $FZF_OUTPUT ]; then
-        return
-    else
-        lvim $FZF_OUTPUT
-    fi
+    [[ ! -z $FZF_OUTPUT ]] && lvim $FZF_OUTPUT
 }
 
 # Fuzzy folder switcher
@@ -43,11 +39,7 @@ fd() {
                  fzf --preview="ls -l --color=always --group-directories-first {}" \
                      --bind shift-up:preview-up,shift-down:preview-down \
                      --height=20 --reverse)
-    if [ -z $FZF_OUTPUT ]; then
-        return
-    else
-        cd $FZF_OUTPUT
-    fi
+    [[ ! -z $FZF_OUTPUT ]] && cd $FZF_OUTPUT
 }
 
 # Local function will be unset below

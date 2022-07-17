@@ -1,16 +1,14 @@
 #              __________________ 
 #          /\  \   __           /  /\    /\           Author      : Aniket Meshram [AniGMe]
-#         /  \  \  \         __/  /  \  /  \          Description : Bashrc configurations.
-#        /    \  \       _____   /    \/    \
-#       /  /\  \  \     /    /  /            \        Github Repo : https://github.com/aniketgm/dotfiles
-#      /        \  \        /  /      \/      \
-#     /          \  \      /  /                \ 
-#    /            \  \    /  /                  \
+#         /  \  \  \         __/  /  \  /  \          Description : Bashrc configuration. Highlights:
+#        /    \  \       _____   /    \/    \                       > Firefox as default browser
+#       /  /\  \  \     /    /  /            \                      > AutoCD to directories
+#      /        \  \        /  /      \/      \                     > Zoxide for directory hopping
+#     /          \  \      /  /                \                    > Starship prompt
+#    /            \  \    /  /                  \                   > Tmux as default terminal session
 #   /              \  \  /  /                    \
-#  /__            __\  \/  /__                  __\
+#  /__            __\  \/  /__                  __\   Github Repo : https://github.com/aniketgm/Dotfiles
 #
-
-# [ -z "$TMUX" ] && { tmux -a attach || exec tmux -u new-session && exit; }
 
 # If not running interactively, don't do anything
 case $- in
@@ -24,6 +22,9 @@ esac
 
 # Define xdg config home 
 [[ -z "${XDG_CONFIG_HOME}" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+
+# Set EDITOR to lvim
+[[ -z "${EDITOR}" ]] && export EDITOR="lvim"
 
 # Define browser variable
 [ -x /usr/bin/firefox ] && export BROWSER="/usr/bin/firefox"
@@ -166,9 +167,9 @@ eval "$(~/.local/bin/zoxide init bash)"
 eval "$(starship init bash)"
 
 # Start tmux as default terminal session
-[ -x /usr/bin/tmux ] && \
-  [ -n "$PS1" ] && \
-  [[ ! "$TERM" =~ screen ]] && \
-  [[ ! "$TERM" =~ tmux ]] && \
-  [ -z "$TMUX" ] && exec tmux 
+# [ -x /usr/bin/tmux ] && \
+#   [ -n "$PS1" ] && \
+#   [[ ! "$TERM" =~ screen ]] && \
+#   [[ ! "$TERM" =~ tmux ]] && \
+#   [ -z "$TMUX" ] && exec tmux 
 

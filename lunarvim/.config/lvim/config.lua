@@ -8,7 +8,7 @@
      /          \  \      /  /                \                    - Additional plugins and their configurations
     /            \  \    /  /                  \                   - Additional keymappings
    /              \  \  /  /                    \
-  /__            __\  \/  /__                  __\   Github Repo : https://github.com/aniketgm/dotfiles
+  /__            __\  \/  /__                  __\   Github Repo : https://github.com/aniketgm/Dotfiles
 
 --]]
 
