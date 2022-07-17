@@ -10,20 +10,6 @@
 #  /__            __\  \/  /__                  __\
 #
 
-# Check Battery
-batt() {
-    echo `cat /sys/class/power_supply/BAT0/status`: `cat /sys/class/power_supply/BAT0/capacity`%
-}
-
-# NNN customized -- Terminal file manager nnn with default options
-# n() {
-#     export NNN_PLUG='o:fzopen;c:fzcd;j:autojump;e:nvim;p:preview-tabbed'
-#     export NNN_COLORS='#5251d0be;2341'
-#     export NNN_FIFO='/tmp/nnn.fifo'
-#     export EDITOR='nvim'
-#     nnn -cdEFnQrux
-# }
-
 # Fuzzy file finder customized to open with neovim.
 ff() {
     FZF_OUTPUT=$(rg --files --hidden | \
