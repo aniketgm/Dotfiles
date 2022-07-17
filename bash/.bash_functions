@@ -73,3 +73,5 @@ dkc() {
             ;;
     esac
 }
+
+#TODO: Add a specialized cp function that can create directories if DEST directories don't exist
