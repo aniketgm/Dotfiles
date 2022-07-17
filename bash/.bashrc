@@ -165,3 +165,10 @@ eval "$(~/.local/bin/zoxide init bash)"
 # Starship Prompt
 eval "$(starship init bash)"
 
+# Start tmux as default terminal session
+[ -x /usr/bin/tmux ] && \
+  [ -n "$PS1" ] && \
+  [[ ! "$TERM" =~ screen ]] && \
+  [[ ! "$TERM" =~ tmux ]] && \
+  [ -z "$TMUX" ] && exec tmux 
+

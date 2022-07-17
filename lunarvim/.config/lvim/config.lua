@@ -22,7 +22,7 @@ either a global executable or a path to an executable
 -- #---------------------------
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+-- lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- lvim.use_icons = false
 
@@ -192,10 +192,10 @@ lvim.builtin.which_key.mappings["P"] = {
 }
 lvim.builtin.which_key.mappings["S"] = {
   name = "+Session",
-  s = { "<cmd>SaveSession<cr>", "Save current session" },
+  w = { "<cmd>SaveSession<cr>", "Save current session" },
   r = { "<cmd>RestoreSession<cr>", "Restore last session" },
-  v = { "<cmd>SearchSession<cr>", "View sessions" },
-  d = { "<cmd>DeleteSession<cr>", "Delete current session" },
+  s = { "<cmd>SearchSession<cr>", "Show sessions" },
+  k = { "<cmd>DeleteSession<cr>", "Kill/Delete current session" },
 }
 lvim.builtin.which_key.mappings["d"] = {
   name = "+Diffview",
