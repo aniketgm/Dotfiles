@@ -1,7 +1,7 @@
 --[[
               __________________
           /\  \   __           /  /\    /\           Author      : Aniket Meshram [AniGMe]
-         /  \  \  \         __/  /  \  /  \          Description : LunarVim customized configuration. This configuration
+         /  \  \  \         __/  /  \  /  \          Description : Customized lunarvim configuration. This configuration
         /    \  \       _____   /    \/    \                       is divided into following sections:
        /  /\  \  \     /    /  /            \                      - LunarVim options
       /        \  \        /  /      \/      \                     - Vim options
@@ -126,9 +126,7 @@ lvim.colorscheme = "sonokai"
 
 -- # Auto-Session
 -- # ------------
-require('auto-session').setup({
-  auto_restore_enabled = false
-})
+require('auto-session').setup()
 
 -- # Telescope
 -- # ---------

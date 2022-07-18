@@ -1,1 +1,7 @@
+#+TITLE: Dotfiles Management
+#+AUTHOR: Aniket Meshram
+#+DESCRIPTION: This document lists the steps to manage dotfiles when navigating to different machines
+#+OPTIONS: toc:2
+
 * Dotfiles
+
