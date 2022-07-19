@@ -4,4 +4,39 @@
 #+OPTIONS: toc:2
 
 * Dotfiles
+- The dotfiles are managed using [[https://www.gnu.org/software/stow/][GNU Stow]]. The idea is simple:
+    + For each folder, store/restore the config in the respective folders.
+    + Reason for having separate folders is that I can restore only the things I want rather than restore all of them.
 
+- So for e.g. The bash related dotfiles, (=.bashrc=, =.bash_aliases=, etc..) are stored in a folder called 'bash'.
+
+- So when setting up a new machine and assuming the 'Dotfiles' folder is located in $HOME directory: $HOME/Dotfiles, doing a simple: ~$ stow bash~, will restore/add the files in it's parent directory (in this case the parent of 'Dotfiles' folder is $HOME directory).
+
+- So the files inside bash folder will into $HOME.
+
+** Steps to restore:
+- Pre-requisite: Install GNU Stow
+
+  #+begin_src bash
+  sudo apt install stow # This is for Ubuntu, check stow docs for how to install..
+  #+end_src
+
+- Clone the repo:
+
+  #+begin_src bash
+  cd ~
+  git clone https://github.com/aniketgm/Dotfiles.git
+  #+end_src
+
+- Goto inside the Dotfiles and restore whatever you want:
+
+  #+begin_src bash
+  cd Dotfiles
+  stow bash
+  #+end_src
+
+- This will restore bash files in the $HOME directory.
+
+- Similarly, doing ~stow <folder_name_inside_Dotfiles>, will restore the respective stuff.
+
+- NOTE: The bashrc file contains an entry at the end for [[https://github.com/ajeetdsouza/zoxide][zoxide]] and [[https://starship.rs][starship]].
