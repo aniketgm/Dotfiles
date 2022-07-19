@@ -61,6 +61,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 vim.opt.cmdheight = 1
 vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
+vim.cmd([[highlight Normal guibg=None]])
 -- vim.opt[fillchars] = {
 --   diff         = '⣿',                          -- Show the specified symbol for Diff
 --   vert         = '¦'                           -- Show the specified symbol for vertical split
@@ -133,7 +134,7 @@ require('auto-session').setup()
 lvim.builtin.telescope.defaults.layout_strategy = "bottom_pane"
 lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 lvim.builtin.telescope.defaults.path_display = { truncate = true }
-lvim.builtin.telescope.defaults.winblend = 15
+-- lvim.builtin.telescope.defaults.winblend = 15
 lvim.builtin.telescope.pickers.current_buffer_fuzzy_find = { previewer = false }
 lvim.builtin.telescope.pickers.live_grep = {
   previewer = false,
