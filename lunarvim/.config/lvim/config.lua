@@ -60,12 +60,12 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- # Vim specific options
 -- #----------------------
 vim.opt.cmdheight = 1
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
--- vim.opt[fillchars] = {
---   diff         = '⣿',                          -- Show the specified symbol for Diff
---   vert         = '¦'                           -- Show the specified symbol for vertical split
--- },
+vim.opt.fillchars = {
+  diff = '⣿', -- Show the specified symbol for Diff
+  vert = '¦' -- Show the specified symbol for vertical split
+}
 -- vim.opt.listchars = {
 --   space = '·', -- Show space with the symbol set
 --   tab   = '│ ' -- Show tabs with the symbol set
