@@ -3,7 +3,7 @@
 #+DESCRIPTION: This document lists the steps to manage dotfiles when navigating to different machines
 #+OPTIONS: toc:2
 
-* Dotfiles
+** Overview
 - The dotfiles are managed using [[https://www.gnu.org/software/stow/][GNU Stow]]. The idea is simple:
     + For each folder, store/restore the config in the respective folders.
     + Reason for having separate folders is that I can restore only the things I want rather than restore all of them.
