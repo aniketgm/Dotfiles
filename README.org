@@ -23,17 +23,17 @@
 
 - Clone the repo:
 
-  #+begin_src bash
+#+begin_src bash
   cd ~
   git clone https://github.com/aniketgm/Dotfiles.git
-  #+end_src
+#+end_src
 
 - Goto inside the Dotfiles and restore whatever you want:
 
-  #+begin_src bash
+#+begin_src bash
   cd Dotfiles
   stow bash
-  #+end_src
+#+end_src
 
 - This will restore bash files in the $HOME directory.
 
