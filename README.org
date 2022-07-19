@@ -17,9 +17,9 @@
 ** Steps to restore:
 - Pre-requisite: Install GNU Stow
 
-  #+begin_src bash
+#+begin_src bash
   sudo apt install stow # This is for Ubuntu, check stow docs for how to install..
-  #+end_src
+#+end_src
 
 - Clone the repo:
 
