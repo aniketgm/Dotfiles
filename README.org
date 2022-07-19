@@ -18,7 +18,7 @@
 - Pre-requisite: Install GNU Stow
 
 #+begin_src bash
-  sudo apt install stow # This is for Ubuntu, check stow docs for how to install..
+  sudo apt install stow # This is for ubuntu. Check stow docs for how to install for other platforms
 #+end_src
 
 - Clone the repo:
