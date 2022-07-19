@@ -84,6 +84,14 @@ lvim.plugins = {
   -- ## ------------
   -- { "folke/tokyonight.nvim" },
   { "sainnhe/sonokai" },
+  {
+    "NTBBloodbath/doom-one.nvim",
+    config = function()
+      require("doom-one").setup({
+        transparent_background = true,
+      })
+    end
+  },
   -- { "LunarVim/onedarker.nvim" },
   -- { "EdenEast/nightfox.nvim" },
   -- { "jacoborus/tender.vim" },
@@ -115,12 +123,14 @@ lvim.plugins = {
 -- # Colorscheme config
 -- # ------------------
 -- vim.g.sonokai_style = 'default'
-vim.g.sonokai_style = 'andromeda'
-vim.g.sonokai_better_performance = 1
-vim.g.sonokai_transparent_background = 1
+-- vim.g.sonokai_style = 'andromeda'
+-- vim.g.sonokai_better_performance = 1
+-- vim.g.sonokai_transparent_background = 1
 -- vim.g.sonokai_style = 'espresso'
 -- vim.g.sonokai_enable_italic = 1
-lvim.colorscheme = "sonokai"
+-- lvim.colorscheme = "sonokai"
+lvim.colorscheme = "doom-one"
+
 -- vim.g.tokyonight_style = 'night'
 -- vim.g.tokyonight_italic_functions = 1
 -- lvim.colorscheme = "tokyonight"
