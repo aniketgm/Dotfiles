@@ -4,6 +4,9 @@
 #   Original Author: Wenxuan [ wenxuangm@gmail.com ]
 #           Created: 2018-04-05 17:37
 #          Modified: Aniket Meshram [ https://github.com/aniketgm ]
+#
+# NOTE: This is modified version of tmux-power. Check the original
+#       one here: https://github.com/wfxr/tmux-power
 #-------------------------------------------------------------------
 
 # $1: option | $2: default value
