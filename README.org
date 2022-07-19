@@ -5,14 +5,15 @@
 
 ** Overview
 - The dotfiles are managed using [[https://www.gnu.org/software/stow/][GNU Stow]]. The idea is simple:
-    + For each folder, store/restore the config in the respective folders.
-    + Reason for having separate folders is that I can restore only the things I want rather than restore all of them.
+  + For each folder, store/restore the config that's in that respective folder.
+  + Reason for having separate folders is that I can restore only the things I want rather and not all of them.
+  + Again, why, because 2 main reasons:
+    a. My home PC contains fish shell and my office PC contains bash shell. So I make it generic rather than specialized. My fish config will all over the place in my office config, which I don't want.
+    b. Say, today my office uses Linux (thanksfully, because I love Linux), but let's say I switch to another org, which uses Windows, not all the linux config would work, So I define separate config folders for Windows.
 
-- So for e.g. The bash related dotfiles, (=.bashrc=, =.bash_aliases=, etc..) are stored in a folder called 'bash'.
+*** How does it work ?
 
-- So when setting up a new machine and assuming the 'Dotfiles' folder is located in $HOME directory: $HOME/Dotfiles, doing a simple: ~$ stow bash~, will restore/add the files in it's parent directory (in this case the parent of 'Dotfiles' folder is $HOME directory).
-
-- So the files inside bash folder will into $HOME.
+- The bash related dotfiles, (=.bashrc=, =.bash_aliases=, etc..) are stored in a folder called 'bash'. So when setting up a new machine and assuming the 'Dotfiles' folder is cloned in $HOME directory ($HOME/Dotfiles), doing a simple: ~$ stow bash~, will restore/add the files in $HOME directory.
 
 ** Steps to restore:
 - Pre-requisite: Install GNU Stow
@@ -37,6 +38,6 @@
 
 - This will restore bash files in the $HOME directory.
 
-- Similarly, doing ~stow <folder_name_inside_Dotfiles>, will restore the respective stuff.
+- Similarly, doing ~stow <folder_name_inside_Dotfiles>~, will restore the respective stuff.
 
-- NOTE: The bashrc file contains an entry at the end for [[https://github.com/ajeetdsouza/zoxide][zoxide]] and [[https://starship.rs][starship]].
+- NOTE: The bashrc file contains an entry at the end for [[https://github.com/ajeetdsouza/zoxide][zoxide]] and [[https://starship.rs][starship]]. So you may want to install that first before using the config.
