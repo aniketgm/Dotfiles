@@ -35,6 +35,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.project.show_hidden = true
 lvim.builtin.terminal.active = true
+-- lvim.builtin.bufferline.options.separator_style = "padded_slant"
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -61,7 +62,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 vim.opt.cmdheight = 1
 vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
-vim.cmd([[highlight Normal guibg=None]])
 -- vim.opt[fillchars] = {
 --   diff         = '⣿',                          -- Show the specified symbol for Diff
 --   vert         = '¦'                           -- Show the specified symbol for vertical split
@@ -117,6 +117,7 @@ lvim.plugins = {
 -- vim.g.sonokai_style = 'default'
 vim.g.sonokai_style = 'andromeda'
 vim.g.sonokai_better_performance = 1
+vim.g.sonokai_transparent_background = 1
 -- vim.g.sonokai_style = 'espresso'
 -- vim.g.sonokai_enable_italic = 1
 lvim.colorscheme = "sonokai"
