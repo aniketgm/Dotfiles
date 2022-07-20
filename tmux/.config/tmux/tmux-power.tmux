@@ -21,8 +21,9 @@ tmux_set() {
 }
 
 # Options
-right_arrow_icon=$(tmux_get '@right_arrow_icon' '')
-left_arrow_icon=$(tmux_get '@left_arrow_icon' '')
+# right_arrow_icon=$(tmux_get '@right_arrow_icon' '')
+# left_arrow_icon=$(tmux_get '@left_arrow_icon' '')
+left_arrow_line_icon=$(tmux_get '@left_arrow_line_icon' '')
 up_arrow_icon=$(tmux_get '@up_arrow_icon' '▲')
 down_arrow_icon=$(tmux_get '@down_arrow_icon' '▼')
 upload_speed_icon=$(tmux_get '@upload_speed_icon' '')
@@ -131,7 +132,7 @@ tmux_set status-right-length 150
 RS="\
 #[fg=$G06]$left_arrow_icon\
 #[fg=$TC,bg=$G06] $battery_icon#(~/bin/battstat.sh) \
-#[fg=$TC,bg=$G06]\
+#[fg=$TC,bg=$G06]|\
 #[fg=$TC,bg=$G06] $time_icon $time_format \
 #[fg=$TC,bg=$G06]$left_arrow_icon\
 #[fg=$G04,bg=$TC] $date_icon $date_format "
@@ -147,6 +148,8 @@ fi
 tmux_set status-right "$RS"
 
 # Window status
+# tmux_set window-status-current-format "#[fg=$BG,bg=$G06]$right_arrow_icon #[fg=$TC,bold]#I:#W #[fg=$G06,bg=$BG,nobold]$right_arrow_icon"
+# tmux_set window-status-format "#[fg=$BG,bg=$G06]$right_arrow_icon #[fg=$G00,italics]#I:#W #[fg=$G06,bg=$BG,nobold]$right_arrow_icon"
 tmux_set window-status-current-format "#[fg=$BG,bg=$G06]$right_arrow_icon #[fg=$TC,bold]#I:#W #[fg=$G06,bg=$BG,nobold]$right_arrow_icon"
 tmux_set window-status-format "#[fg=$BG,bg=$G06]$right_arrow_icon #[fg=$G00,italics]#I:#W #[fg=$G06,bg=$BG,nobold]$right_arrow_icon"
 
