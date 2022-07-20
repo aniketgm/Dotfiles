@@ -87,9 +87,7 @@ lvim.plugins = {
   {
     "NTBBloodbath/doom-one.nvim",
     config = function()
-      require("doom-one").setup({
-        transparent_background = true,
-      })
+      require('doom-one').setup()
     end
   },
   -- { "LunarVim/onedarker.nvim" },
@@ -109,7 +107,7 @@ lvim.plugins = {
     "sindrets/diffview.nvim",
     event = "BufRead",
     config = function()
-      require("diffview").setup({})
+      require("diffview").setup()
     end,
   },
   { "kdheepak/lazygit.nvim" },
@@ -172,6 +170,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<F3>"] = "<cmd>NvimTreeFindFileToggle<cr>"
 lvim.keys.normal_mode["<F2>"] = "<cmd>DiffviewToggleFiles<cr>"
 lvim.keys.normal_mode["<C-q>"] = false
+lvim.keys.normal_mode["<C-m>"] = "<cmd>Telescope resume<cr>"
 
 -- To unmap a default keymapping: vim.keymap.del("n", "<C-Up>")
 -- Override a default keymapping: lvim.keys.normal_mode["<C-q>"] = ":q<cr>" OR vim.keymap.set("n", "<C-q>", ":q<cr>" )
