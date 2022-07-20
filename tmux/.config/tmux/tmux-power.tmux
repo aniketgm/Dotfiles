@@ -20,7 +20,6 @@ tmux_set() {
     tmux set-option -gq "$1" "$2"
 }
 
-
 # Options
 right_arrow_icon=$(tmux_get '@right_arrow_icon' '')
 left_arrow_icon=$(tmux_get '@left_arrow_icon' '')

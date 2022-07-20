@@ -35,6 +35,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.project.show_hidden = true
 lvim.builtin.terminal.active = true
+-- lvim.builtin.lualine.style = "default"
 -- lvim.builtin.bufferline.options.separator_style = "padded_slant"
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -60,7 +61,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- # Vim specific options
 -- #----------------------
 vim.opt.cmdheight = 1
--- vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
 vim.opt.fillchars = {
   diff = '⣿', -- Show the specified symbol for Diff
@@ -87,7 +88,10 @@ lvim.plugins = {
   {
     "NTBBloodbath/doom-one.nvim",
     config = function()
-      require('doom-one').setup()
+      require('doom-one').setup({
+        italic_comments = true,
+        transparent_background = true
+      })
     end
   },
   -- { "LunarVim/onedarker.nvim" },
@@ -126,13 +130,13 @@ lvim.plugins = {
 -- vim.g.sonokai_transparent_background = 1
 -- vim.g.sonokai_style = 'espresso'
 -- vim.g.sonokai_enable_italic = 1
--- lvim.colorscheme = "sonokai"
-lvim.colorscheme = "doom-one"
-
 -- vim.g.tokyonight_style = 'night'
 -- vim.g.tokyonight_italic_functions = 1
+
 -- lvim.colorscheme = "tokyonight"
 -- lvim.colorscheme = "tender"
+-- lvim.colorscheme = "sonokai"
+lvim.colorscheme = "doom-one"
 
 -- # Auto-Session
 -- # ------------
